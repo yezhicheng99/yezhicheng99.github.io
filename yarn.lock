@@ -853,7 +853,7 @@
     "prismjs" "^1.17.1"
     "strip-indent" "^3.0.0"
 
-"hexo@^6.0.0":
+"hexo@^6.1.0":
   "integrity" "sha512-TeV2cN61CD2C1GKczJRR3tdZhR3JUQi8wtS4eIgkDOeDYWTmovPoSCcc8jvh42D3fehOPp6E81fTeyjh39QWtA=="
   "resolved" "https://registry.npmjs.org/hexo/-/hexo-6.1.0.tgz"
   "version" "6.1.0"
