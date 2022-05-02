@@ -16,7 +16,7 @@ menu:
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: light #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: pale night #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
@@ -120,6 +120,17 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
+    - https://i.loli.net/2019/11/10/lP3rLNUBaGtSVzc.png
+    - https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png
+    - https://i.loli.net/2019/11/10/53eTB2uiNRlXwFP.png
+    - https://i.loli.net/2019/11/10/xthHmnbdNerWOqP.png
+    - https://i.loli.net/2019/11/10/rJbFpE65tmxPv7R.png
+    - https://i.loli.net/2019/11/10/bEJsXxewpOGuRD8.png
+    - https://i.loli.net/2019/11/10/71wgohfPHqXRbG9.png
+    - https://i.loli.net/2019/11/10/gcnavZbmepS8d4u.png
+    - https://i.loli.net/2019/11/10/3wkO7fuQpgda6vz.png
+    - https://i.loli.net/2019/11/10/egVhFWopA5mP2Hk.png
+
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
