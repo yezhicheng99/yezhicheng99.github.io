@@ -22,45 +22,6 @@ project (Tutorial)
 add_executable(Tutorial tutorial.cxx)
 ```
 
-# file
-
-使用语法：file(GLOB variable 通配符表达式)
-
-- 参数说明
-GLOB: 查找所有在当前目录（CMakeLists.txt所在目录，即CMAKE_CURRENT_SOURCE_DIR变量）下所有满足匹配通配符表达式的文件
-variable: 保存文件名的变量
-
-- 举例
-``` cmake
-file(GLOB source_list "src/*.cpp")
-```
-
-# set
-
-使用语法：set(<variable> <value>）
-
-- 举例：设置opencv路径
-``` cmake
-set(OpenCV_DIR "/usr/share/opencv")
-```
-
-# message
-用于记录log消息
-
-使用语法：message([<mode>] "message text" ...)
-
-- mode:要记录的log的类型，包括
-FATAL_ERROR: cmake errer, 遇到该错误，cmake 直接停止处理
-WARNING: 警告信息， 但是cmake会继续执行下去的
-STATUS: 用于记录一些cmake 运行过程中的有用的信息
-
-- 举例
-``` cmake
-message(STATUS "hello, world.")
-set(NAME xiaoming)
-messaeg(STATUS "hello, ${NAME}")
-```
-
 # project
 
 使用语法：project(项目名字, [VERSION 版本号] [DESCRIPTION 描述字符串] )
@@ -69,6 +30,20 @@ messaeg(STATUS "hello, ${NAME}")
 ``` cmake
 project(myproject)
 project(myproject, VERSION 1.0.0 DESCRIPTION "my first project" )
+```
+
+# set
+
+使用语法：set(<variable> <value>）
+
+- 添加c++ 11标准支持
+``` cmake
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+```
+
+- 设置opencv路径
+``` cmake
+set(OpenCV_DIR "/usr/share/opencv")
 ```
 
 # include_directories
@@ -122,13 +97,34 @@ add_executable( main main.cpp )
 target_link_libraries( main ${OpenCV_LIBS} )
 ```
 
-# add _executable
+# file
 
-使用语法：add_executable(name [source1] [source2] ...)
+使用语法：file(GLOB variable 通配符表达式)
+
+- 参数说明
+GLOB: 查找所有在当前目录（CMakeLists.txt所在目录，即CMAKE_CURRENT_SOURCE_DIR变量）下所有满足匹配通配符表达式的文件
+variable: 保存文件名的变量
 
 - 举例
 ``` cmake
-add_executable(main main.cpp utils.cpp)
+file(GLOB source_list "src/*.cpp")
+```
+
+# message
+用于记录log消息
+
+使用语法：message([<mode>] "message text" ...)
+
+- mode:要记录的log的类型，包括
+FATAL_ERROR: cmake errer, 遇到该错误，cmake 直接停止处理
+WARNING: 警告信息， 但是cmake会继续执行下去的
+STATUS: 用于记录一些cmake 运行过程中的有用的信息
+
+- 举例
+``` cmake
+message(STATUS "hello, world.")
+set(NAME xiaoming)
+messaeg(STATUS "hello, ${NAME}")
 ```
 
 # add_library
@@ -160,6 +156,15 @@ INTERFACE/PUBLIC/PRIVATE: 使用PRIVATE关键字时，添加的路径只会在�
 ``` cmake
 target_include_directories(mylib PUBLIC include/1.h PUBLIC ${PROJECT_SOURCE_DIR}/include)
 target_include_directories(mytarget PRIVATE ${PROJECT_SOURCE_DIR}/include)
+```
+
+# add _executable
+
+使用语法：add_executable(name [source1] [source2] ...)
+
+- 举例
+``` cmake
+add_executable(main main.cpp utils.cpp)
 ```
 
 # target_link_libraries
