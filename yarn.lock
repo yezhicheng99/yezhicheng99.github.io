@@ -788,6 +788,13 @@
   "resolved" "https://registry.npmjs.org/hexo-pagination/-/hexo-pagination-1.0.0.tgz"
   "version" "1.0.0"
 
+"hexo-pangu-spacing@^1.1.0":
+  "integrity" "sha1-rMDyYC6tJeVlmbBPgknVj87+F1c="
+  "resolved" "https://registry.npmjs.org/hexo-pangu-spacing/-/hexo-pangu-spacing-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "pangu" "*"
+
 "hexo-renderer-ejs@^2.0.0":
   "integrity" "sha512-qCjE1IdwgDgv65qyb0KMVCwCdSVAkH0vwAe9XihjvaKWkmb9dtt8DgErOdqCXn0HReSyWiEVP2BrLRj3gyHwOQ=="
   "resolved" "https://registry.npmjs.org/hexo-renderer-ejs/-/hexo-renderer-ejs-2.0.0.tgz"
@@ -1347,6 +1354,11 @@
     "prelude-ls" "~1.1.2"
     "type-check" "~0.3.2"
     "word-wrap" "~1.2.3"
+
+"pangu@*":
+  "integrity" "sha512-weZKJIwwy5gjt4STGVUH9bix3BGk7wZ2ahtIypwe3e/mllsrIZIvtfLx1dPX56GcpZFOCFKmeqI1qVuB9enRzA=="
+  "resolved" "https://registry.npmjs.org/pangu/-/pangu-4.0.7.tgz"
+  "version" "4.0.7"
 
 "parse5@6.0.1":
   "integrity" "sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw=="

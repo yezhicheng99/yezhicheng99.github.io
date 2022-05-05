@@ -109,7 +109,7 @@ $ git commit -m "这里填写你本次提交的备注，内容随意" #git提交
 $ git push origin hexo #文件推送到hexo分支
 ```
 
-## 注意：每次在写新的博客之前，一定要先在blog目录下执行 git pull，获取最新源文件
+## 注意：每次在写新的博客之前，一定要先在blog目录下执行 git pull　或者 git pull origin hexo:hexo，获取最新源文件
 
 
 
