@@ -5,7 +5,7 @@ categories:
 tags:
 top_img:
 ---
-在构建一个C++项目工程时，通常需要使用cmake来写CMakeLists.txt文件来管理工程的编译和运行。
+在<b>构建</b>一个C++项目工程时，通常需要使用cmake来写CMakeLists.txt文件来管理工程的编译和运行。
 
 # cmake_minimum_required
 

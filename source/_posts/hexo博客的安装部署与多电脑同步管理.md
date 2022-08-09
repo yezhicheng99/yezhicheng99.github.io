@@ -105,7 +105,7 @@ $ hexo d
 ### 上传hexo源文件到github博客仓库下hexo分支
 ``` bash
 $ git add . #添加所有本地文件到git
-$ git commit -m "这里填写你本次提交的备注，内容随意" #git提交
+$ git commit -m " 这里填写你本次提交的备注，内容随意 " #git提交
 $ git push origin hexo #文件推送到hexo分支
 ```
 
