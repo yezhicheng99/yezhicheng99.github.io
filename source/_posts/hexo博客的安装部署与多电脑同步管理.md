@@ -53,7 +53,7 @@ deploy:
   branch: main
 ```
 
-###　生成博客，并上传到github服务器
+### 生成博客，并上传到github服务器
 ``` bash
 $ hexo g # 生成博客
 $ hexo s # 启动本地服务，这时候可以打开浏览器输入网址：http://localhost:4000/ 查看效果
@@ -91,7 +91,7 @@ $ npm install
 ### 书写新的博客并上传
 
 ``` bash
-$ hexo new "博客标题"
+$ hexo new " 博客标题 "
 ```
 
 打开 blog/source/_posts/ 目录下"博客标题.md"文件，并书写博客内容
@@ -100,7 +100,7 @@ $ hexo new "博客标题"
 $ hexo clean
 $ hexo g
 $ hexo d
-```　
+``` 
 
 ### 上传hexo源文件到github博客仓库下hexo分支
 ``` bash
@@ -109,7 +109,7 @@ $ git commit -m " 这里填写你本次提交的备注，内容随意 " #git提�
 $ git push origin hexo #文件推送到hexo分支
 ```
 
-## 注意：每次在写新的博客之前，一定要先在blog目录下执行 git pull　或者 git pull origin hexo:hexo，获取最新源文件
+## 注意：每次在写新的博客之前，一定要先在blog目录下执行 git pull 或者 git pull origin hexo:hexo，获取最新源文件
 
 
 
