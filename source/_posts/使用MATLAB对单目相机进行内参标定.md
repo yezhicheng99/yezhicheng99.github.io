@@ -10,43 +10,43 @@ top_img:
 
 ## 打开标定工具箱
 在“应用程序”中搜索“camera”，点击图标打开相机标定工具箱。
-<img src="图片1.png"/>
+<img src="picture1.png"/>
 
 ## 添加标定图片
 点击“Add Images”里的“From file”，添加提前拍摄的标定图片，也可以选择“From camera”直接从相机获取标定图片。
-<img src="图片2.png"/>
+<img src="picture2.png"/>
 
 设置标定板上方格的实际边长，单位是mm
-<img src="图片3.png"/>
+<img src="picture3.png"/>
 
 点击“确定”后自动开始检测所有图片里的角点，检测完成会显示总的图片数量，接受的图片数量和拒绝的图片数量，点击“view images”可以查看被拒绝的图片。
-<img src="图片4.png"/>
-<img src="图片5.png"/>
-<img src="图片6.png"/>
+<img src="picture4.png"/>
+<img src="picture5.png"/>
+<img src="picture6.png"/>
 
 点击“确定”后页面左侧显示接受的图片，中间显示选中的图片，该图片中角点的检测结果，绿色圆圈表示检测到的角点，黄色方框表示检测到的棋盘格坐标原点。
-<img src="图片7.png"/>
+<img src="picture7.png"/>
 
 ## 标定选项设置
 在窗口上面一栏的“OPTIONS”里选择需要标定的相机内参的阶数（2阶或3阶），是否同时标定畸变系数，以及畸变的类型（Skew:径向畸变，Tangential Distortion: 切向畸变）
-<img src="图片8.png"/>
+<img src="picture8.png"/>
 
 ## 标定计算
 点击“Calibrate”开始进行相机标定。
-<img src="图片9.png"/>
+<img src="picture9.png"/>
 
 标定计算完成后界面右侧会显示各张图片的重投影误差柱状图和平均重投影误差值。
-<img src="图片10.png"/>
+<img src="picture10.png"/>
 
 ## 根据标定结果筛选图片提高标定精度
 拖动柱状图内红色线选中重投影误差较大的图片，在界面左侧鼠标右键将它们删除，以此来保留优质标定图片重新进行内参标定，当平均重投影误差值小于0.5个像素时认为标定完成。
-<img src="图片11.png"/>
-<img src="图片12.png"/>
+<img src="picture11.png"/>
+<img src="picture12.png"/>
 
 ## 导出标定结果
 点击“Export camera parameters”将标定结果数据导出到 matlab 工作空间中。
-<img src="图片13.png"/>
-<img src="图片14.png"/>
+<img src="picture13.png"/>
+<img src="picture14.png"/>
 
 其中的“Intrinsic Matrix”代表相机内参矩阵 $K$
 $$
@@ -55,8 +55,8 @@ $$
 
 其中 $f_{x}=\alpha f$, $f_{y}=\beta f$，表示空间坐标点在成像平面上的缩放比，$c_{x}$ 和 $c_{y}$ 表示成像平面中心点到左上角在 $x$ 和 $y$ 方向上的平移量，$s$ 为坐标轴倾斜参数，理想情况下为0。
 
-<img src="图片15.png"/>
-<img src="图片16.png"/>
+<img src="picture15.png"/>
+<img src="picture16.png"/>
 
 ## Note:
 ### 标定板准备工作
@@ -77,7 +77,7 @@ $$
 - 从不同的角度拍摄照片
 - 标定板在图片中至少占据 $20%$ 区域
 - 为了更好的得到畸变系数，不同的图片中标定板尽量占据图片的不同位置（中部和接近图片各个边缘区域）
-<img src="图片17.png"/>
+<img src="picture17.png"/>
 
 ### 标定
 - 可以设置内参初值
