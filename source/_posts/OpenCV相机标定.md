@@ -6,7 +6,7 @@ tags:
 top_img:
 ---
 
-本文介绍如何用OpenCV对相机进行标定，代码来源于 [OpenCV](https://docs.opencv.org/3.4/dc/dbb/tutorial_py_calibration.html) 官方教程，并对代码基于自己的理解做了详细的注释。
+本文介绍如何用OpenCV对相机进行标定，代码来源于 [OpenCV](https://docs.opencv.org/3.4/dc/dbb/tutorial_py_calibration.html) 官方教程，并基于自己的理解对代码做了详细的注释。
 
 ## 相机内参概念回顾
 
@@ -81,8 +81,11 @@ def main():
     import getopt
     from glob import glob
 
+    # 获取输入的参数，debug: 图片输出路径，square_size: 方格边长，threads: 线程数，image_mask: 标定图片路径和命名格式
     args, img_mask = getopt.getopt(sys.argv[1:], '', ['debug=', 'square_size=', 'threads='])
+    # 将参数类型变成字典类型
     args = dict(args)
+    # 设置参数默认值
     args.setdefault('--debug', './output/')
     args.setdefault('--square_size', 1.0)
     args.setdefault('--threads', 4)
@@ -91,8 +94,10 @@ def main():
     else:
         img_mask = img_mask[0]
 
+    # 根据img_mask提供的路径和文件命名格式，搜索指定目录下所有符合命名格式的图片名称
     img_names = glob(img_mask)
     debug_dir = args.get('--debug')
+    # 如果图片输出路径不存在，则创建该文件夹
     if debug_dir and not os.path.isdir(debug_dir):
         os.mkdir(debug_dir)
     square_size = float(args.get('--square_size'))
