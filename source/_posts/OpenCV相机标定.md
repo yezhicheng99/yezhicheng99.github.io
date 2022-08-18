@@ -102,8 +102,11 @@ def main():
         os.mkdir(debug_dir)
     square_size = float(args.get('--square_size'))
 
+    # 标定板横向角点数和纵向角点数（不包括最外圈的黑白方框）
     pattern_size = (9, 6)
+    # np.prod(): 返回给定轴上数组元素乘积，这里 np.prod(pattern_size) = 54
     pattern_points = np.zeros((np.prod(pattern_size), 3), np.float32)
+    # 生成角点坐标
     pattern_points[:, :2] = np.indices(pattern_size).T.reshape(-1, 2)
     pattern_points *= square_size
 
@@ -113,20 +116,29 @@ def main():
 
     def processImage(fn):
         print('processing %s... ' % fn)
+        '''
+        cv.imread("image.png", mode)
+        IMREAD_UNCHANGED = -1, //返回原始图像。alpha通道不会被忽略，如果有的话。
+        IMREAD_GRAYSCALE = 0, //返回灰度图像
+        IMREAD_COLOR = 1, //返回通道顺序为BGR的彩色图像
+        '''
         img = cv.imread(fn, 0)
         if img is None:
             print("Failed to load", fn)
             return None
 
         assert w == img.shape[1] and h == img.shape[0], ("size: %d x %d ... " % (img.shape[1], img.shape[0]))
+        # 检测角点，found 表示是否检测成功，corners 为检测到的角点坐标
         found, corners = cv.findChessboardCorners(img, pattern_size)
         if found:
             term = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_COUNT, 30, 0.1)
+            # 对检测到的角点进一步优化，使角点的精度达到亚像素级别（比像素级别更准确）
             cv.cornerSubPix(img, corners, (5, 5), (-1, -1), term)
 
         if debug_dir:
             vis = cv.cvtColor(img, cv.COLOR_GRAY2BGR)
             cv.drawChessboardCorners(vis, pattern_size, corners, found)
+            # 提取路径，文件名，后缀
             _path, name, _ext = splitfn(fn)
             outfile = os.path.join(debug_dir, name + '_chess.png')
             cv.imwrite(outfile, vis)
